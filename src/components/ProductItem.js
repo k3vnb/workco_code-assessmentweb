@@ -12,7 +12,9 @@ const ProductItem = ({ product, onAddToCartClicked }) => (
         className="product-card"
         title={product.title}
         price={product.price}
-        inventory={product.inventory} />
+        inventory={product.inventory} 
+        checkOutIsVisible={false}
+        />
       <div className="btn-container">
         <button
           className="primary-cta"

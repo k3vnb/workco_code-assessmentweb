@@ -1,9 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Product = ({ price, inventory, title, thumbnail }) => (
+const Product = ({ price, inventory, title, thumbnail, checkOutIsVisible }) => {
+
+  const checkOutView = checkOutIsVisible;
+
+  const ifCheckOut = checkOutIsVisible ? (<img width={50} src={thumbnail} />) : null;
+
+  return (
+
   <div className="product-card-text">
     <div className="product-name-and-price">
+      {ifCheckOut}
       <div className="product-name">
         {title}
       </div>
@@ -12,7 +20,7 @@ const Product = ({ price, inventory, title, thumbnail }) => (
       </div>
     </div>
     <div className="inventory-count">
-      {inventory ? `${inventory} remaining` : `Sold Out!`}
+      {inventory ? `${inventory} remaining` : null}
     </div>
     <style>{`
       .product-card-text {
@@ -62,12 +70,14 @@ const Product = ({ price, inventory, title, thumbnail }) => (
       }
     `}</style>
   </div>
-)
+  )
+}
 
 Product.propTypes = {
   price: PropTypes.number,
   inventory: PropTypes.number,
-  title: PropTypes.string
+  title: PropTypes.string,
+  checkOutIsVisible: PropTypes.bool
 }
 
 export default Product
