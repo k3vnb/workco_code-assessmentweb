@@ -21,8 +21,16 @@ const Cart  = ({ products, total, onCheckoutClicked }) => {
     </div>
   )
 
-  const showTotal = hasProducts ? (
-    <p>Total: &#36;{total}</p>
+  const checkoutInfo = hasProducts ? (
+    <div>
+      <p>Total: &#36;{total}</p>
+      <button 
+        onClick={onCheckoutClicked}
+        disabled={hasProducts ? '' : 'disabled'}
+      >
+        Checkout
+      </button>
+    </div>
     ) : (<br />)
 
   return (
@@ -32,11 +40,7 @@ const Cart  = ({ products, total, onCheckoutClicked }) => {
       <div className="cart-container-inner">
       </div>
       <div>{nodes}</div>
-      <div>{showTotal}</div>
-      <button onClick={onCheckoutClicked}
-        disabled={hasProducts ? '' : 'disabled'}>
-        Checkout
-      </button>
+      <div>{checkoutInfo}</div>
       <style>{`
         .cart-container-outer {
           padding: 3% 4%;
@@ -51,11 +55,14 @@ const Cart  = ({ products, total, onCheckoutClicked }) => {
           display: flex;
           flex-direction: column;
           align-items: center;
+          justify-content: center;
+          color: #9B9B9B;
         }
         .no-items-cart-inner img {
           width: 10vw;
           min-width: 60px;
           margin-bottom: 5%;
+          opacity: .5;
         }
       `}</style>
     </div>
