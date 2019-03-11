@@ -27,7 +27,7 @@ const ProductItem = ({ product, onAddToCartClicked }) => (
         border: 2px solid black;
         width: 90%;
         border-radius: 10px;
-        height: 360px;
+        height: 390px;
       }
       .thumbnail{
         object-fit: cover;
@@ -62,11 +62,16 @@ const ProductItem = ({ product, onAddToCartClicked }) => (
       @media screen and (min-width: 600px){
         .product-card {
           display: flex;
+          height: 180px;
         }
         .thumbnail {
           height: 100%;
           border-radius: 10px 0 0 10px;
-          width: 33%;
+          width: 35%;
+        }
+        .product-card-text-and-btn {
+          width: 50%;
+          padding-left: 5%;
         }
       }
     `}</style>

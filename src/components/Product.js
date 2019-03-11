@@ -15,23 +15,28 @@ const Product = ({ price, inventory, title, thumbnail }) => (
       {inventory ? `${inventory} remaining` : `Sold Out!`}
     </div>
     <style jsx>{`
-      .product-card-container {
+      .product-card-text {
         height: 100%;
-        width: 100%;
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
+        width: 90%;
       }
       .product-card-text {
         padding: 5%;
       }
       .product-name-and-price {
         display: flex;
+        flex-direction: row;
         justify-content: space-between;
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
         color: #292929;
-        font-size: 1.5em;
+        
         padding-bottom: 5%;
+      }
+      .product-name {
+        font-size: 1.5em;
+      }
+      .product-price {
+        font-size: 1.3em;
+        font-weight: 300;
       }
       .inventory-count {
         font-family: 'Nunito', sans-serif;
@@ -40,7 +45,12 @@ const Product = ({ price, inventory, title, thumbnail }) => (
         text-transform: uppercase;
         font-size: .8em;
       }
+      @media screen and (min-width: 600px){
+        .product-card-text {
+          height: 50%;
+        }
 
+      }
     `}</style>
   </div>
 )
