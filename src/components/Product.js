@@ -2,34 +2,25 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 const Product = ({ price, inventory, title, thumbnail }) => (
-  <div className="product-card-container">
-    <img className="thumbnail" src={thumbnail} alt={`${title} thumbnail`}/>
-    <div className="product-card-text">
-      <div className="product-name-and-price">
-        <div className="product-name">
-          {title}
-        </div>
-        <div className="product-price">
-          ${price}
-        </div>
+  <div className="product-card-text">
+    <div className="product-name-and-price">
+      <div className="product-name">
+        {title}
       </div>
-      <div className="inventory-count">
-        {inventory ? `${inventory} remaining` : `Sold Out!`}
+      <div className="product-price">
+        ${price}
       </div>
+    </div>
+    <div className="inventory-count">
+      {inventory ? `${inventory} remaining` : `Sold Out!`}
     </div>
     <style jsx>{`
       .product-card-container {
         height: 100%;
         width: 100%;
         overflow: hidden;
-      }
-      .thumbnail{
-        object-fit: cover;
-        height: 65%;
-        width: 100%;
-        overflow: hidden;
-        border-bottom: 1px solid black;
-        border-radius: 10px 10px 0 0;
+        display: flex;
+        flex-direction: column;
       }
       .product-card-text {
         padding: 5%;
@@ -49,6 +40,7 @@ const Product = ({ price, inventory, title, thumbnail }) => (
         text-transform: uppercase;
         font-size: .8em;
       }
+
     `}</style>
   </div>
 )
