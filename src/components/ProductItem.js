@@ -10,30 +10,38 @@ const ProductItem = ({ product, onAddToCartClicked }) => (
       title={product.title}
       price={product.price}
       inventory={product.inventory} />
-    <button
-      className="primary-cta"
-      onClick={onAddToCartClicked}
-      disabled={product.inventory > 0 ? '' : 'disabled'}>
-      {product.inventory > 0 ? 'Add to cart' : 'Sold Out'}
-    </button>
+      <div className="btn-container">
+        <button
+          className="primary-cta"
+          onClick={onAddToCartClicked}
+          disabled={product.inventory > 0 ? '' : 'disabled'}>
+          {product.inventory > 0 ? 'Add to cart' : 'Sold Out'}
+        </button>
+      </div>
     <style jsx>{`
       .product-card {
         border: 2px solid black;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
+        width: 90%;
+        border-radius: 10px;
+        height: 375px;
+      }
+      .btn-container {
+        padding: 0 0 5% 5%;
       }
       .primary-cta {
         background-color: #5E97D1;
-        min-height: 20px;
-        height: 5vw;
-        border-radius: 16px;
-        padding: 1% 2.5%;
+        min-height: 40px;
+        width: 45%;
+        border-radius: 20px;
+        padding: .5% 2%;
         color: #FFFFFF;
         text-transform: uppercase;
         font-family: 'Nunito', sans-serif;
         font-weight: 300;
+        font-size: .85em;
       }
       .primary-cta:hover {
         background-color: #407FC0;
