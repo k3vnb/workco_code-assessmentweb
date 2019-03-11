@@ -22,10 +22,10 @@ const ProductItem = ({ product, onAddToCartClicked }) => (
         </button>
       </div>
     </div>
-    <style jsx>{`
+    <style>{`
       .product-card {
-        border: 2px solid black;
-        width: 90%;
+        background-color: #FFFFFF;
+        width: 100%;
         border-radius: 10px;
         height: 390px;
       }
@@ -34,7 +34,6 @@ const ProductItem = ({ product, onAddToCartClicked }) => (
         height: 55%;
         width: 100%;
         overflow: hidden;
-        border-bottom: 1px solid black;
         border-radius: 10px 10px 0 0;
       }
       .btn-container {
@@ -72,6 +71,12 @@ const ProductItem = ({ product, onAddToCartClicked }) => (
         .product-card-text-and-btn {
           width: 50%;
           padding-left: 5%;
+        }
+      }
+
+      @media screen and (min-width: 1000px){
+        .product-card {
+          height: 220px;
         }
       }
     `}</style>
