@@ -11,6 +11,7 @@ const ProductItem = ({ product, onAddToCartClicked }) => (
       price={product.price}
       inventory={product.inventory} />
     <button
+      className="primary-cta"
       onClick={onAddToCartClicked}
       disabled={product.inventory > 0 ? '' : 'disabled'}>
       {product.inventory > 0 ? 'Add to cart' : 'Sold Out'}
@@ -23,8 +24,22 @@ const ProductItem = ({ product, onAddToCartClicked }) => (
         justify-content: center;
         align-items: center;
       }
-      button {
-        background-color: blue;
+      .primary-cta {
+        background-color: #5E97D1;
+        min-height: 20px;
+        height: 5vw;
+        border-radius: 16px;
+        padding: 1% 2.5%;
+        color: #FFFFFF;
+        text-transform: uppercase;
+        font-family: 'Nunito', sans-serif;
+        font-weight: 300;
+      }
+      .primary-cta:hover {
+        background-color: #407FC0;
+      }
+      .primary-cta:disabled {
+        background-color: #5E97D1;
       }
     `}</style>
   </div>
