@@ -2,9 +2,14 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 const ProductsList = ({ title, children }) => (
-  <div>
+  <div className="products-list-container">
     {/* <h3>{title}</h3> */}
     <div>{children}</div>
+    <style>{`
+      .products-list-container {
+        padding: 5% 0%;
+      }
+    `}</style>
   </div>
 )
 
