@@ -28,14 +28,18 @@ const Cart  = ({ products, total, onCheckoutClicked }) => {
 
   const checkoutInfo = hasProducts ? (
     <div>
-      <div className="cart-product-card">
-        
+      <div className="cart-product-card">       
         <div>{nodes}</div>
       </div>
+      <hr />
       <div className="cart-totals">
-        <p>Subtotal: &#36;{subTotal}</p>
-        <p>Taxes: &#36;{taxes.toFixed(2)}</p>
-        <p>Total: &#36;{newTotal.toFixed(2)}</p>
+        <p><span className="totals-label">Subtotal:</span> <span className="totals-amounts">&#36;{subTotal.toFixed(2)}</span></p>
+        <p><span className="totals-label">Taxes:</span> <span className="totals-amounts">&#36;{taxes.toFixed(2)}</span></p>
+        <hr />
+        <p><span className="totals-label">Total:</span> <span className="totals-amounts">&#36;{newTotal.toFixed(2)}</span></p>
+      </div>
+      <div className="update-btn-container">
+        <button className="update-btn">Update</button>
       </div>
       <button 
         className="checkout-btn"
@@ -77,10 +81,27 @@ const Cart  = ({ products, total, onCheckoutClicked }) => {
           margin-bottom: 5%;
           opacity: .5;
         }
-        .checkout-btn {
+        .update-btn-container {
           width: 100%;
+          display: flex;
+          justify-content: center;
+          margin-bottom: 15%;
+        }
+        .update-btn {
+          background-color: transparent;
+          border: 1px solid lightgrey;
+          height: 60px;
+          font-size: 1.3em;
+          width: 90%;
+        }
+        .update-btn:hover {
+          border: 1px solid grey;
+        }
+        .checkout-btn {
+          width: 110%;
+          margin-left: -5%;
           background-color: #5E97D1;
-          height: 50px;
+          height: 80px;
           color: #FFFFFF;
           text-transform: uppercase;
           font-size: 1.1em;
@@ -91,6 +112,14 @@ const Cart  = ({ products, total, onCheckoutClicked }) => {
         }
         .checkout-btn:disabled {
           background-color: #5E97D1;
+        }
+        .cart-totals p {
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+        }
+        .totals-label {
+          font-weight: bold;
         }
       `}</style>
     </div>

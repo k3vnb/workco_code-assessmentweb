@@ -15,9 +15,13 @@ const App = () => (
       .main-container {
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
         color: #292929;  
-        background-color: #eef2f3;
+        background-color: #f8fafb
         padding: 0 2%;
       }
+      button:focus{
+        outline:none;
+        transform: scale(1.01);
+     }
     `}</style>
   </div>
 )
