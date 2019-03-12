@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { HashRouter, Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
@@ -7,7 +8,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 const Nav = ({products}) => {
     let cartNotification;
     let cartQuantity = 0;
-    let pluralizeItem;
    
     products.forEach(product => cartQuantity += product.quantity);
 
@@ -23,15 +23,20 @@ const Nav = ({products}) => {
     return (
         <div className="header">
             <h2 className="nav-brand">Acme Store</h2>
-            <div className="cart-notification">
-                <FontAwesomeIcon 
-                    icon="shopping-cart"
-                    size="sm"
-                    className="cart-icon"
-                />
-                <div className="cart-text">{cartNotification}</div>
-            </div>
+            <HashRouter>
+                <Link to="/cart">
+                    <div className="cart-notification">
+                        <FontAwesomeIcon 
+                            icon="shopping-cart"
+                            size="sm"
+                            className="cart-icon"
+                        />
+                        <div className="cart-text">{cartNotification}</div>
+                    </div>
+                </Link>
+            </HashRouter>
             <style>{`
+
                 .nav-brand {
                     font-size: 2em;
                     margin-bottom: 1%;
@@ -54,18 +59,27 @@ const Nav = ({products}) => {
                 .cart-text {
                     margin-bottom: 5%;
                 }
+                .header a {
+                    width: 100%;
+                    text-decoration: none;
+                    color: #292929;
+                    text-align: right;
+                }
 
                 @media screen and (min-width: 600px){
                     .header {
                         display: flex;
+                        width: 100%;
                         justify-content: space-between;
                         align-items: baseline;
                     }
                     .nav-brand {
                         font-size: 2.5em;
+                        width: 67%;
                     }
                     .cart-notification {
-                        width: 30%;
+                        display: flex;
+                        justify-content: flex-end;
                     }
                 }
 
