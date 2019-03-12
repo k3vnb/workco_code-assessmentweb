@@ -5,6 +5,9 @@ import cartIcon from '../assets/cart-icon.png'
 
 const Cart  = ({ products, total, onCheckoutClicked }) => {
   const hasProducts = products.length > 0
+  const subTotal = Number(total)
+  const taxes = subTotal/12.4
+  const newTotal = subTotal + taxes
   const nodes = hasProducts ? (
     products.map(product =>
       <Product
@@ -18,7 +21,7 @@ const Cart  = ({ products, total, onCheckoutClicked }) => {
     )
   ) : (
     <div className="no-items-cart-inner">
-      <img src={cartIcon} />
+      <img src={cartIcon} alt="your cart"/>
       <div>Please add some products to cart.</div>
     </div>
   )
@@ -29,7 +32,11 @@ const Cart  = ({ products, total, onCheckoutClicked }) => {
         
         <div>{nodes}</div>
       </div>
-      <p>Total: &#36;{total}</p>
+      <div className="cart-totals">
+        <p>Subtotal: &#36;{subTotal}</p>
+        <p>Taxes: &#36;{taxes.toFixed(2)}</p>
+        <p>Total: &#36;{newTotal.toFixed(2)}</p>
+      </div>
       <button 
         className="checkout-btn"
         onClick={onCheckoutClicked}
@@ -81,6 +88,9 @@ const Cart  = ({ products, total, onCheckoutClicked }) => {
         }
         .checkout-btn:hover {
           background-color: #407FC0;
+        }
+        .checkout-btn:disabled {
+          background-color: #5E97D1;
         }
       `}</style>
     </div>

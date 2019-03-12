@@ -14,7 +14,7 @@ const ProductItem = ({ product, onAddToCartClicked }) => (
         price={product.price}
         inventory={product.inventory} 
         checkOutIsVisible={false}
-        />
+      />
       <div className="btn-container">
         <button
           className="primary-cta"

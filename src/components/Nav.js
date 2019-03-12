@@ -1,13 +1,13 @@
 import React from 'react'
 import cartIcon from '../assets/cart-icon.png'
-import PropTypes from 'prop-types'
+
 
 
 const Nav = () => (
     <div className="header">
         <h2 className="nav-brand">Acme Store</h2>
         <div className="cart-notification">
-            <img src={cartIcon} />
+            <img src={cartIcon} alt="your cart"/>
             <div className="cart-text">Your cart is empty</div>
         </div>
         <style>{`
