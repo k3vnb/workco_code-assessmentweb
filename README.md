@@ -39,4 +39,4 @@ If I were to refactor this project further, I would think about cleaning up some
 
 One of the reasons I am applying for this internship is because I realize I have some strengths and some weaknesses regarding best practices for professional grade web development, and I could benefit from the opportunity to implement real world projects and receive professional feedback.
 
-Thanks!
+:star2: Thanks! :tada:
