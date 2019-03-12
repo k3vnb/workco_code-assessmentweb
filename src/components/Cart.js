@@ -96,6 +96,7 @@ const Cart  = ({ products, total, onCheckoutClicked }) => {
         }
         .update-btn:hover {
           border: 1px solid grey;
+          color: black;
         }
         .checkout-btn {
           width: 110%;

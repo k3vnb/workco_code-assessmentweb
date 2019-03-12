@@ -22,3 +22,5 @@ After styling the cards, I created a Nav component, responsive but initially cre
 I then moved on to styling the checkout cart. I re-used the shopping cart icon and gave it 50% opacity to match the greyed out look of the mock up. I first rendered the shopping cart when there are no items, and I did not extract the component into a modal pop up yet (as indicated by the mock up), to concentrate first on the general styling. 
 
 After working on the Cart component, it became apparent that it shared the Product component for rendering the cart items. I opted to add a boolean propType to determine if the current view is from the Cart or from the general product page. I also set up conditional rendering inside of the Product component based on that boolean prop.
+
+I ultimately installed a collection of font-awesome libraries necessary to render a shopping cart icon in the Nav component. I realized the mock-up instructions wanted the icon to change colors to blue on hover, and an SVG based icon was necessary to make that happen accordingly. 
