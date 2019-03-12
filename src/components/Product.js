@@ -10,25 +10,36 @@ const Product = ({ price, inventory, title, thumbnail, checkOutIsVisible }) => {
 
    if (checkOutIsVisible){
      return (
-      <div className="product-card-checkout">
-          <div className="product-img-checkout">{productImage}</div>
-          <div className="product-text-checkout">
-            <div className="product-name-and-price-checkout">
-              <div className="product-name-checkout">
-                {title}
+       <div className="product-card-and-buttons-checkout">
+        <div className="product-card-checkout">
+            <div className="product-img-checkout">{productImage}</div>
+            <div className="product-text-checkout">
+              <div className="product-name-and-price-checkout">
+                <div className="product-name-checkout">
+                  {title}
+                </div>
+                <div className="product-price-checkout">
+                  ${price}
+                </div>
               </div>
-              <div className="product-price-checkout">
-                ${price}
+              <div className="remove-product-from-checkout">
+                Remove
               </div>
             </div>
-            <div className="remove-product-from-checkout">
-              Remove
-            </div>
-            </div>
+        </div>
+        <div className="increment-decrement-quantity-container">
+          <button className="decrement-product-quantity">-</button>
+          <div className="checkout-product-quantity">1</div>
+          <button className="increment-product-quantity">+</button>
+        </div>
       <style>{`
+        .product-card-and-buttons-checkout {
+          margin-bottom: 3%;
+        }
         .product-card-checkout {
           display: flex;
           height: 150px;
+          margin-bottom: 1%;
         }
         .product-img-checkout {
           width: 40%;
@@ -56,6 +67,34 @@ const Product = ({ price, inventory, title, thumbnail, checkOutIsVisible }) => {
         .remove-product-from-checkout {
           color: red;
           font-size: 1.2em;
+        }
+        .increment-decrement-quantity-container {
+          display: flex;
+          width: 100vw;
+          padding: 1%;
+          height: 60px;
+
+        }
+        .checkout-product-quantity {
+          background-color: white;
+          width: 25%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 1.5em;
+        }
+        .increment-decrement-quantity-container button {
+          background-color: #F2F4F7;
+          width: 30%;
+          height: 100%;
+          font-size: 2em;
+          color: #D8D8D8;
+        }
+        .increment-product-quantity {
+          border-radius: 0 20px 20px 0;
+        }
+        .decrement-product-quantity {
+          border-radius: 20px 0 0 20px;
         }
       `}</style>
     </div>
