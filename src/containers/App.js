@@ -28,6 +28,7 @@ const App = () => (
         color: #292929;  
         background-color: #f8fafb;
         padding: 0 2%;
+        position: relative;
       }
       button {
         transition: .1s linear;

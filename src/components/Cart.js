@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Product from './Product'
+import { HashRouter, Link } from 'react-router-dom'
 import cartIcon from '../assets/cart-icon.png'
 
 const Cart  = ({ products, total, onCheckoutClicked }) => {
@@ -27,7 +28,12 @@ const Cart  = ({ products, total, onCheckoutClicked }) => {
   )
 
   const checkoutInfo = hasProducts ? (
-    <div>
+    <div className="cart-container-outer">
+      <HashRouter>
+        <Link to="/">
+          <div className="return-home">X</div>
+        </Link>
+      </HashRouter>
       <div className="cart-product-card">       
         <div>{nodes}</div>
       </div>
@@ -53,12 +59,36 @@ const Cart  = ({ products, total, onCheckoutClicked }) => {
 
   return (
     <div className="cart-container-outer">
+      <HashRouter>
+        <Link to="/">
+          <div className="return-home">X</div>
+        </Link>
+      </HashRouter>
       <h3>Your Cart</h3>
       <hr />
       <div>{checkoutInfo}</div>
       <style>{`
         .cart-container-outer {
           padding: 3% 4%;
+          position: absolute;
+          top: 1%;
+          left: 2%;
+          width: 90vw;
+          height: 100vh;
+          max-width: 500px;
+          background-color: white;
+        }
+        .return-home {
+          width: 90%;
+          display: flex;
+          justify-content: flex-end;
+          font-size: 2em;
+          font-weight: 300;
+          margin-right: 15%;
+        }
+        .cart-container-outer a {
+          text-decoration: none;
+          color: black;
         }
         .cart-container-outer h3 {
           font-size: 2.5em;
@@ -121,6 +151,13 @@ const Cart  = ({ products, total, onCheckoutClicked }) => {
         }
         .totals-label {
           font-weight: bold;
+        }
+
+        @media screen and (min-width: 600px){
+          .cart-container-outer {
+            left: 0%;
+            min-width: 90vw;
+          }
         }
       `}</style>
     </div>
