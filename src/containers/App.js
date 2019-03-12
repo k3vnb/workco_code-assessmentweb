@@ -1,7 +1,7 @@
 import React from 'react'
 import ProductsContainer from './ProductsContainer'
 import CartContainer from './CartContainer'
-import Nav from '../components/Nav'
+import NavContainer from './NavContainer'
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
@@ -10,7 +10,7 @@ library.add(faShoppingCart);
 
 const App = () => (
   <div className="main-container">
-    <Nav />
+    <NavContainer />
     <hr/>
     <ProductsContainer />
     <hr/>
