@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Product = ({ price, inventory, title, thumbnail, checkOutIsVisible }) => {
+const Product = ({ price, inventory, quantity, title, thumbnail, checkOutIsVisible }) => {
 
 
 
@@ -29,7 +29,7 @@ const Product = ({ price, inventory, title, thumbnail, checkOutIsVisible }) => {
         </div>
         <div className="increment-decrement-quantity-container">
           <button className="decrement-product-quantity">-</button>
-          <div className="checkout-product-quantity">1</div>
+          <div className="checkout-product-quantity">{quantity}</div>
           <button className="increment-product-quantity">+</button>
         </div>
         <style>{`
@@ -176,6 +176,7 @@ Product.propTypes = {
   price: PropTypes.number,
   inventory: PropTypes.number,
   title: PropTypes.string,
+  quantity: PropTypes.number,
   checkOutIsVisible: PropTypes.bool
 }
 
