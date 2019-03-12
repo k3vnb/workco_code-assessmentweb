@@ -86,6 +86,9 @@ const Cart  = ({ products, total, onCheckoutClicked }) => {
           font-weight: 300;
           margin-right: 15%;
         }
+        .return-home:hover {
+          text-shadow: 0px 1px 5px grey;
+        }
         .cart-container-outer a {
           text-decoration: none;
           color: black;

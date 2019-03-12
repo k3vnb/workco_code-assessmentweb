@@ -27,3 +27,16 @@ I ultimately installed a collection of font-awesome libraries necessary to rende
 
 I also wanted to make the Nav component responsive to the state of the Cart. So I followed the model of wrapping it in a Container connected to the Redux store. I saw that the 'products' state was being passed in as an array, and so I wrote a forEach function to grab the quantity value from products and add them together. So each time you click 'Add to Cart' on the product page, it adds that item numerically to the cart count in the Nav section.
 
+Finally, I added react-router-dom to change views from the Product Page to the Cart and back. This required a bit of refactoring and redoing some styles.  I utilized the HashRouter component from react-router-dom because it was best at maintaining state from one view to the next.
+
+The home page is found at http://localhost:3000/#/ and the Cart page is at http://localhost:3000/#/cart. There is a link in the Nav to the Cart, and the 'X' will link back to the home page.
+
+## Conclusion
+
+This was a fun project, and I found it was challenging in a good way.  I did not implement new features into Redux, I kept my project largely one of styling components and using Redux functionality that already existed.  So, some of my buttons (ie, the increment/decrement buttons in the Cart view and the 'Remove' button) are not wired up.
+
+If I were to refactor this project further, I would think about cleaning up some of my components, for example the Product component has become a bit bloated and could benefit from being broken down into more modular pieces. I would also try to implement more of a 'modal' look to the check out screen, as indicated in the mockup. 
+
+One of the reasons I am applying for this internship is because I realize I have some strengths and some weaknesses regarding best practices for professional grade web development, and I could benefit from the opportunity to implement real world projects and receive professional feedback.
+
+Thanks!
